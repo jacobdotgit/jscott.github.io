@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Scott's Classroom</title>
+    <style>
+                        .theme-green-dark {
+                            --bg-main: #18221e;
+                            --bg-header: #22543d;
+                            --bg-nav: #276749;
+                            --bg-content: #22332c;
+                            --text-main: #a3ffb0;
+                            --text-accent: #4fd1c5;
+                            --text-link: #fff;
+                            --text-link-hover: #ffe066;
+                            --nav-link-bg: #276749;
+                            --nav-link-hover-bg: #22543d;
+                            --border-header: #4fd1c5;
+                            --border-nav: #4fd1c5;
+                            --border-footer: #4fd1c5;
+                        }
+                .theme-purple-gray {
+                    --bg-main: #2d2536;
+                    --bg-header: #4b3869;
+                    --bg-nav: #3a2d4d;
+                    --bg-content: #3e3355;
+                    --text-main: #e0c3fc;
+                    --text-accent: #b39ddb;
+                    --text-link: #b39ddb;
+                    --text-link-hover: #fff;
+                    --border-header: #b39ddb;
+                    --border-nav: #9575cd;
+                    --border-footer: #b39ddb;
+                }
+        .theme-red-white {
+            --bg-main: #fff;
+            --bg-header: #d32f2f;
+            --bg-nav: #b71c1c;
+            --bg-content: #fff;
+            --text-main: #e25a5a;
+            --text-accent: #e76565;
+            --text-link: #fff;
+            --text-link-hover: #ffd700;
+            --nav-link-bg: #b71c1c;
+            --nav-link-hover-bg: #d32f2f;
+            --border-header: #b71c1c;
+            --border-nav: #d32f2f;
+            --border-footer: #d32f2f;
+        }
+        :root {
+            --bg-main: #181818;
+            --bg-header: #111;
+            --bg-nav: #222;
+            --bg-content: #222;
+            --text-main: #ff7300;
+            --text-accent: #ffa500;
+            --text-link: #ffa500;
+            --text-link-hover: #fff;
+            --border-header: #ff7300;
+            --border-nav: #ff7300;
+            --border-footer: #ffa500;
+        }
+        .theme-blue-white {
+            --bg-main: #f5f7fa;
+            --bg-header: #4a90e2;
+            --bg-nav: #357ab7;
+            --bg-content: #fff;
+            --text-main: #222;
+            --text-accent: #357ab7;
+            --text-link: #fff;
+            --text-link-hover: #ffd700;
+            --nav-link-bg: #357ab7;
+            --nav-link-hover-bg: #4a90e2;
+            --border-header: #357ab7;
+            --border-nav: #4a90e2;
+            --border-footer: #357ab7;
+        }
+        .theme-red-white {
+            --bg-main: #fff;
+            --bg-header: #d32f2f;
+            --bg-nav: #b71c1c;
+            --bg-content: #fff;
+            --text-main: #ebe3e3;
+            --text-accent: #1e1b1b;
+            --text-link: #fff;
+            --text-link-hover: #ffd700;
+            --nav-link-bg: #b71c1c;
+            --nav-link-hover-bg: #d32f2f;
+            --border-header: #b71c1c;
+            --border-nav: #d32f2f;
+            --border-footer: #d32f2f;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: var(--bg-main);
+            color: var(--text-main);
+            transition: background 0.3s, color 0.3s;
+        }
+        header {
+            background: var(--bg-header);
+            color: var(--text-main);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--border-header);
+        }
+        nav {
+            background: var(--bg-nav);
+            padding: 0.5rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--border-nav);
+        }
+        nav a {
+            color: var(--text-link);
+            background: var(--nav-link-bg, transparent);
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3em 0.8em;
+            border-radius: 4px;
+            transition: color 0.2s, background 0.2s;
+            display: inline-block;
+        }
+        nav a:hover {
+            color: var(--text-link-hover);
+            background: var(--nav-link-hover-bg, #333);
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-content);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: var(--text-accent);
+        }
+        ul, p, li, a {
+            color: var(--text-accent);
+        }
+        a {
+            text-decoration: underline;
+        }
+        a:hover {
+            color: var(--text-link-hover);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: var(--bg-header);
+            color: var(--text-accent);
+            margin-top: 2rem;
+            border-top: 2px solid var(--border-footer);
+        }
+        .theme-switcher {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5rem 2rem 0.5rem 0;
+        }
+        .theme-switcher label {
+            color: var(--text-main);
+            margin-right: 0.5rem;
+        }
+        .theme-switcher select {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-nav);
+            background: var(--bg-content);
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switcher">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select">
+            <option value="default">Black/Orange</option>
+            <option value="theme-blue-white">Blue/White</option>
+            <option value="theme-green-dark">Green/Dark</option>
+            <option value="theme-purple-gray">Purple/Gray</option>
+            <option value="theme-red-white">Red/White</option>
+        </select>
+    </div>
+    <header>
+        <h1>Welcome to Mr. Scott's Classroom</h1>
+        <p>Central Magnet School Computer Science, Cybersecurity, and Networking</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="about" class="content-section">
+            <h2>About Mr. Scott</h2>
+        </section>
+        <section id="schedule" class="content-section" style="display:none">
+            <h2>Class Schedule</h2>
+            <ul>
+                <li>Monday - A</li>
+                <li>Tuesday - B</li>
+                <li>Wednesday - A</li>
+                <li>Thursday - B</li>
+                <li>Friday - 8</li>
+            </ul>
+        </section>
+        <section id="contact" class="content-section" style="display:none">
+            <h2>Contact</h2>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 Mr. Scott's Classroom
+    </footer>
+</body>
+    <script>
+        // Theme switching logic
+        const themeSelect = document.getElementById('theme-select');
+        const body = document.body;
+        const themeClasses = [
+            'theme-blue-white',
+            'theme-green-dark',
+            'theme-purple-gray',
+            'theme-red-white'
+        ];
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme && savedTheme !== 'default') {
+            body.classList.add(savedTheme);
+            themeSelect.value = savedTheme;
+        }
+        themeSelect.addEventListener('change', function() {
+            body.classList.remove(...themeClasses);
+            if (this.value !== 'default') {
+                body.classList.add(this.value);
+            }
+            localStorage.setItem('theme', this.value);
+        });
+
+        // Section navigation logic
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('.content-section');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').replace('#', '');
+                sections.forEach(sec => {
+                    sec.style.display = (sec.id === target) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</html>
